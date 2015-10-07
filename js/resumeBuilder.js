@@ -4,8 +4,9 @@ var awesomeThoughts = "My name is Algis and I am AWESOME!";
 var funThoughts = awesomeThoughts.replace("AWESOME!", "FUN");
 var name = "Algirdas Bankauskas";
 var role = "Front-End Developer";
+var contact = "James Webb";
 var formattedName = HTMLheaderName.replace("%data%", name);
 var formattedRole = HTMLheaderRole.replace("%data%", role);
 
-$("#main").prepend(formattedName);
-$("#main").append(formattedRole);
+$("#header").append(formattedName);
+$("#header").append(formattedRole);
