@@ -1,13 +1,18 @@
-var email = "cameron@udacity.com";
-var newEmail = email.replace("udacity", "gmail");
-var awesomeThoughts = "My name is Algis and I am AWESOME!";
-var funThoughts = awesomeThoughts.replace("AWESOME!", "FUN");
+var bio = {};
 var name = "Algirdas Bankauskas";
 var role = "Front-End Developer";
-var formattedName = HTMLheaderName.replace("%data%", name);
-var formattedRole = HTMLheaderRole.replace("%data%", role);
-var skills = ["HTML ", "CSS ", "Javascript"];
+var skills = ["HTML ", "CSS ", "Javascript "];
+var email = "algirdas.bankauskas@gmail.com";
+var github = "HackingBuddha";
 
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-$("#main").append(skills);
+bio["formattedName"] = HTMLheaderName.replace("%data%", name);
+bio.formattedRole = HTMLheaderRole.replace("%data%", role);
+bio.formattedEmail = HTMLemail.replace("%data%", email);
+bio.formattedGithub = HTMLgithub.replace("%data%", github);
+bio.formattedSkills = HTMLskills.replace("%data%", skills);
+
+$("#header").prepend(bio.formattedRole);
+$("#header").prepend(bio.formattedName);
+$("#main").append(bio.formattedEmail);
+$("#main").append(bio["formattedGithub"]);
+$("#main").append(bio.formattedSkills);
