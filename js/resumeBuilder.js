@@ -1,18 +1,82 @@
-var bio = {};
-var name = "Algirdas Bankauskas";
-var role = "Front-End Developer";
-var skills = ["HTML ", "CSS ", "Javascript "];
-var email = "algirdas.bankauskas@gmail.com";
-var github = "HackingBuddha";
+var bio = {
+	name: "Algirdas Bankauskas",
+	role: "Front-End Developer",
+	skills: ["HTML ", "CSS ", "Javascript "],
+	email: "algirdas.bankauskas@gmail.com",
+	github: "HackingBuddha"
+};
 
-bio["formattedName"] = HTMLheaderName.replace("%data%", name);
-bio.formattedRole = HTMLheaderRole.replace("%data%", role);
-bio.formattedEmail = HTMLemail.replace("%data%", email);
-bio.formattedGithub = HTMLgithub.replace("%data%", github);
-bio.formattedSkills = HTMLskills.replace("%data%", skills);
+var education = {
+    school:
+    {
+      name: "Vilnius Management Academy",
+      location: "Vilnius, Lithuania",
+      degree: "BA",
+      majors: ["Business Management"],
+      dates: 2007
+    },
+	
+    onlineCourses: [
+    {
+      title: "Introduction to Computer Science",
+	  school: "Harvard University",
+	  courseProvider: "edx"
+    },
+    {
+	  title: "Introduction to Theoretical Computer Science",
+	  school: "NA",
+	  courseProvider: "Udacity"
+    },
+    {
+	  tile: "Engineering Software as a Service",
+	  school: "UC Berkeley",
+      courseProvider: "edx"
+    }
+    ]
+};
 
-$("#header").prepend(bio.formattedRole);
-$("#header").prepend(bio.formattedName);
-$("#main").append(bio.formattedEmail);
-$("#main").append(bio["formattedGithub"]);
-$("#main").append(bio.formattedSkills);
+var work = {
+	employment: [
+	{
+	  employer: "Lithuanian Agricultural and Food Market Regulation Agency",
+      title: "Export development manager",
+	  location: "Vilnius, Lithuania",
+	  years: "2008-2011"
+	},
+	{
+	  employer: "Freelance",
+      title: "Front-End Developer",
+      location: "NA",
+	  years: "present"
+	}
+	]
+};
+
+var projects = {
+	udacity: [
+	{
+	  name: "Portfolio Site",
+	  description: "Building a basic personal portfolio website with HTML and CSS"
+	},
+	{
+	  name: "Interactive Resume",
+	  description: "Building an Interactive Resume with HTML, CSS and JS"
+	},
+	{
+	  name: "Classic Arcade Game Clone",
+	  description: "Building an Arcade Game Clone with JS and HTML Canvas"
+	},
+	{
+	  name: "Website Optimization",
+      description: "Optimization of a provided website to run at 60 FPS"
+	},
+	{
+	  name: "Neighborhood Map",
+	  description: "Building a Single-Page AJAX App using Google Maps API"
+	},
+	{
+	  name: "Feed Reader Testing",
+	  description: "Completing the test suite of an RSS Reader App"
+	}
+	]
+}
