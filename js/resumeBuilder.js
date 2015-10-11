@@ -79,4 +79,18 @@ var projects = {
 	  description: "Completing the test suite of an RSS Reader App"
 	}
 	]
+};
+
+if (bio.skills.length > 0) {
+
+	$("#header").append(HTMLskillsStart);
+
+	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+	$("#skills").append(formattedSkill);
+
+	var formattedSKill = HTMLskills.replace("%data%", bio.skills[1]);
+	$("#skills").append(formattedSkill);
+
+	var formattedSkill = HTMlskills.replace("%data%", bio.skills[2]);
+	$("#skills").append(formattedSkill);	
 }
