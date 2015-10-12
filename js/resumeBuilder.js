@@ -2,7 +2,7 @@ var bio = {
 	name: "Algirdas Bankauskas",
 	role: "Front-End Developer",
 	skills: ["HTML ", "CSS ", "Javascript "],
-	email: "algirdas.bankauskas@gmail.com",
+	email: "algis999@gmail.com",
 	github: "HackingBuddha"
 };
 
@@ -39,7 +39,7 @@ var work = {
 	employment: [
 	{
 	  employer: "Lithuanian Agricultural and Food Market Regulation Agency",
-      title: "Export development manager",
+      title: "Export Development Manager",
 	  location: "Vilnius, Lithuania",
 	  years: "2008-2011"
 	},
@@ -81,16 +81,45 @@ var projects = {
 	]
 };
 
-if (bio.skills.length > 0) {
+ function displayWork() {
+	
+	for (job in bio.skills) {
 
-	$("#header").append(HTMLskillsStart);
+		if (bio.skills.length > 0) {
 
-	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-	$("#skills").append(formattedSkill);
+			$("#header").append(HTMLskillsStart);
 
-	var formattedSKill = HTMLskills.replace("%data%", bio.skills[1]);
-	$("#skills").append(formattedSkill);
+			var formattedSkill = HTMLskills.replace("%data%", bio.skills[job]);
+			$("#skills").append(formattedSkill);	
+		}
+	};
 
-	var formattedSkill = HTMlskills.replace("%data%", bio.skills[2]);
-	$("#skills").append(formattedSkill);	
-}
+	for (job in work.employment) {
+		
+		$("#workExperience").append(HTMLworkStart);
+
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.employment[job].employer);
+		var formattedTitle = HTMLworkTitle.replace("%data%", work.employment[job].title);
+		var formattedEmployerTitle = formattedEmployer + formattedTitle;
+
+		$(".work-entry:last").append(formattedEmployerTitle);
+	}
+};
+
+displayWork();
+
+projects.display = function() {
+
+	for (project in projects.udacity) {
+
+		$("#projects").append(HTMLprojectStart);
+
+		var formattedProjectName = HTMLprojectTitle.replace("%data%", projects.udacity[project].name);
+		var formattedProjectDescription = HTMLprojectTitle.replace("%data%", projects.udacity[project].description);
+
+        $(".project-entry:last").append(formattedProjectName);
+        $(".project-entry:last").append(formattedProjectDescription);     
+    } 
+};
+
+projects.display();
